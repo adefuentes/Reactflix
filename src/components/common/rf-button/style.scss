@@ -1,0 +1,21 @@
+@import '../../../index';
+
+.Rs-Button {
+  @include gradient();
+  color: #fff;
+  border: none;
+  width: 250px;
+  height: 40px;
+  margin: 16px 0;
+  border-radius: 7px;
+  font-size: 14pt;
+  cursor: pointer;
+  outline: none;
+  background-size: 150%;
+  background-position-x: 100%;
+  transition: 0.5s all ease-in-out;
+}
+
+.Rs-Button:hover {
+  background-position-x: 0;
+}

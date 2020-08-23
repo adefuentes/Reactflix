@@ -1,0 +1,144 @@
+@import '../../../index';
+
+.Sign-in {
+
+  @extend %container;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .Form-Wrapper {
+
+    width: 30%;
+    box-sizing: border-box;
+    padding: 64px;
+
+    h1 {
+      @extend %thin-font;
+      font-size: 48pt;
+      color: $text-color;
+
+    }
+
+    h2 {
+      @extend %thin-font;
+      font-size: 24pt;
+      color: $text-color;
+    }
+  }
+
+  .Banner-Wrapper {
+    background-image: url("/assets/images/movies-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: 140%;
+    width: 80%;
+    height: 100vh;
+    animation: shift linear 120s infinite;
+    background-position-x: 0;
+    position: relative;
+
+    .Horizontal-Gradient {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(29,29,30,1) 0,
+        rgba(29,29,30,0.4) 20%,
+        transparent 100%
+      );
+      width: 100%;
+      height: 100%;
+    }
+
+    .Promo-Wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      background: linear-gradient(
+        transparent 0%,
+        rgba(29,29,30,1) 60%,
+        rgba(29,29,30,1) 100%
+      );
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      box-sizing: border-box;
+      padding: 64px;
+
+      h3 {
+        color: $text-color;
+        font-size: 32pt;
+      }
+
+
+
+      .Subscription-Wrapper {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .Subscription-block {
+          margin: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          p { margin: 8px }
+
+          .Prize-label {
+            font-size: 24pt;
+            span {
+              font-size: 9pt;
+            }
+          }
+
+        }
+
+      }
+
+      .Crossplatform-Wrapper {
+        background-image: url("/assets/images/crossplatform.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        width: 60%;
+        height: 200px;
+        margin: 64px 0;
+
+        h4 {
+          color: $text-color;
+          font-size: 28pt;
+          margin: 0px;
+        }
+      }
+    }
+
+
+  }
+
+}
+
+@keyframes shift {
+  0% {
+    background-position-x: 0;
+  }
+  25% {
+    background-position-x: 50%;
+  }
+  50% {
+    background-position-x: 100%;
+  }
+  75% {
+    background-position-x: 50%;
+  }
+  100% {
+    background-position-x: 0;
+  }
+}
