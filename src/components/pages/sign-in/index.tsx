@@ -3,11 +3,29 @@ import './style.scss';
 import {RfInput} from "../../common/rf-input";
 import {RsButton} from "../../common/rf-button";
 import {DefaultButton} from "../../common/default-button";
+import {useDispatch, useSelector} from "react-redux";
+import {useHistory} from 'react-router';
+import * as AuthActions from '../../../redux/actions/auth';
+import {DefaultState} from "../../../redux/reducers";
 
 export const SignInPage: React.FunctionComponent = () => {
 
+  const authorized = useSelector<DefaultState, boolean>(state => state.app.authorized);
+  const history = useHistory();
+
+  if (authorized) {
+    history.push('/');
+  }
+
+  const dispatch = useDispatch();
   const [user, setUser] = React.useState<string>("");
   const [pass, setPass] = React.useState<string>("");
+
+  const onAuth = () => {
+    dispatch(AuthActions.request({
+      user, pass
+    }));
+  }
 
   return (
     <div className="Container Sign-in">
@@ -25,7 +43,7 @@ export const SignInPage: React.FunctionComponent = () => {
           value={pass}
           onChange={(newValue: string) => setPass(newValue)}
         />
-        <RsButton onClick={() => {}} text="Iniciar sesión"/>
+        <RsButton onClick={onAuth} text="Iniciar sesión"/>
         <p>¿Has olvidado tu contraseña?</p>
       </div>
       <div className="Banner-Wrapper">
