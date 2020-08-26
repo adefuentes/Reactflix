@@ -1,4 +1,4 @@
-###Reactflix
+# Reactflix
 WebApp, desarrollada en React JS, de una plataforma de contenidos VoD
 
 ![screenshot](https://raw.githubusercontent.com/adefuentes/Reactflix/master/screenshots/home.png)
