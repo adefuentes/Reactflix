@@ -1,6 +1,8 @@
 import React from 'react';
 import {InitPage} from './components/pages/init'
 import {SignInPage} from "./components/pages/sign-in";
+import {MainPage} from './components/pages/main';
+import {ContentPage} from "./components/pages/content";
 import {
   BrowserRouter as Router,
   Route,
@@ -24,16 +26,6 @@ export function PrivateRoute(props: PrivateRouteProps) {
   )} />;
 }
 
-function MainPage() {
-  return (
-    <div style={{
-      width: '100%',
-      height: '100vh',
-      background: 'red'
-    }}/>
-  )
-}
-
 function App() {
   const dispatch = useDispatch();
   dispatch(AppActions.start());
@@ -41,15 +33,26 @@ function App() {
   return (
     <Router>
       <div>
+        <Route
+          exact
+          path='/'
+        >
+          <Redirect to={authorized ? '/home' : 'sign-in'} />
+        </Route>
         <PrivateRoute
           isLogged={authorized}
-          path='/'
+          path='/home'
           component={!authorized ? InitPage : MainPage}
         />
         <Route
           exact
           path='/sign-in'
           component={SignInPage}
+        />
+        <Route
+          exact
+          path='/content/:id'
+          component={ContentPage}
         />
       </div>
     </Router>

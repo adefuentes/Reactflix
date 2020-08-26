@@ -1,0 +1,56 @@
+.Header-Backdrop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+
+  .Info-Wrapper {
+    background: linear-gradient(
+      black 0%,
+      rgba(0,0,0,0.8) 10%,
+      rgba(0,0,0,0.6) 30%,
+      rgba(0,0,0,0.2) 50%,
+      rgba(0,0,0,0.6) 70%,
+      rgba(0,0,0,0.8) 90%,
+      black 100%
+    );
+    width: 100%;
+    height: 100%;
+    padding: 20% 64px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .Movie-Title {
+      font-size: 48pt;
+      font-weight: 900;
+      margin: 32px 0;
+      width: 50%;
+      font-family: Ostrich, "Helvetica Neue", "Segoe UI", Helvetica, sans-serif;
+    }
+
+    .Movie-Date {
+      font-weight: 300;
+      font-size: 20pt;
+      margin: 8px 0;
+    }
+
+    .Movie-Overview {
+      width: 50%;
+      font-weight: 700;
+    }
+
+    .Button-Wrapper {
+      margin: 8px 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+  }
+
+}

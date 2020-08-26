@@ -20,11 +20,28 @@ export const AUTH = createRequestTypes('AUTH', [
   ...defaultTypes,
 ]);
 
+export const MOVIES = createRequestTypes('MOVIES', [
+  ...defaultTypes,
+  'SET_LIST',
+  'FETCH'
+]);
+
+export const CONTENT = createRequestTypes('CONTENT', [
+  ...defaultTypes,
+  'RESET'
+]);
+
 export const APP = createRequestTypes('APP', [
   'START',
   'READY',
   'AUTHORIZED',
   'UNAUTHORIZED',
   'ERROR'
-])
+]);
+
+export const MY_LIST = createRequestTypes('MY_LIST', [
+  'ADD',
+  'REMOVE',
+  'SET'
+]);
 
