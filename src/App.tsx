@@ -19,7 +19,7 @@ interface PrivateRouteProps extends RouteProps {
 
 export function PrivateRoute(props: PrivateRouteProps) {
   let { isLogged, component: Component, ...rest }: any = props;
-  return <Route {...rest} render={(props) => (
+  return <Route {...rest} render={(props: any) => (
     isLogged
       ? <Component {...props}/>
       : <Redirect to={"/sign-in"} />
