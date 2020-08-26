@@ -1,0 +1,14 @@
+@import '../../../index';
+
+.Stroke-button {
+  background: transparent;
+  width: 250px;
+  height: 55px;
+  font-size: 14pt;
+  border: 2px solid $text-color;
+  margin: 8px;
+  border-radius: 7px;
+  color: $text-color;
+  cursor: pointer;
+  outline: none;
+}

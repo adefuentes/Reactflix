@@ -1,0 +1,148 @@
+@import "../../../index";
+
+.Main-Container {
+  @extend %container;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .Navigator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 32px;
+    box-sizing: border-box;
+    z-index: 9999;
+
+    .Nav-Block {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .Nav-Title {
+        font-weight: 700;
+        font-size: 20pt;
+        margin: 0;
+      }
+
+      .Nav-Option {
+        color: $text-color;
+        padding: 0 16px;
+        border: none;
+        background: transparent;
+        font-size: 12pt;
+        height: 100%;
+        cursor: pointer;
+        outline: none;
+        opacity: 0.6;
+      }
+
+      .Nav-Option.Active {
+        font-weight: 900;
+        opacity: 1;
+      }
+    }
+  }
+
+  .List-Wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 100%;
+    padding-bottom: 64px;
+    margin-top: 80vh;
+
+    .Category-Title {
+      font-size: 16pt;
+      font-weight: 700;
+      padding: 0 16px;
+    }
+
+    .Category-Row {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: nowrap;
+      padding-left: 16px;
+
+      .Vertical-Poster {
+        width: 200px;
+        height: 500px;
+        margin: 4px;
+
+        .Relative-layout {
+          width: 200px;
+          height: 500px;
+          position: relative;
+
+          img {
+            object-fit: cover;
+            width: 200px;
+            height: 100%;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: 0.5s all ease-in-out;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+          }
+
+          .Back-face {
+            position: absolute;
+            width: 200px;
+            height: 100%;
+            top: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 8px;
+
+            .Function-Button {
+              font-size: 22pt;
+              padding: 0;
+              width: 50px;
+              height: 50px;
+              line-height: 48px;
+              border-radius: 50%;
+              border: 2px solid $text-color;
+              color: $text-color;
+              background: transparent;
+              cursor: pointer;
+              outline: none;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              transition: 0.5s all ease-in-out;
+              margin: 8px;
+            }
+
+            .Function-Button:hover {
+              background: $text-color;
+              color: #0e0e0d;
+            }
+          }
+        }
+      }
+
+      .Vertical-Poster:hover {
+        img {
+          transform: translateY(-80px);
+        }
+      }
+
+    }
+  }
+
+}
